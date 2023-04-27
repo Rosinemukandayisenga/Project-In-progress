@@ -1,0 +1,119 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+body{
+  display:flex;
+  min-height: 100vh;
+  place-items: center;
+  line-height: 1.6;
+  background: grey;
+}
+.nav-container{
+  background-color: black;
+  height: 100vh;
+  width: 100px;
+  background: black;
+  display: block;
+  gap: 40px;
+  border-radius: 5px;
+}
+.nav{
+  float:right;
+  display: flex;
+  gap: 40px;
+
+}
+.nav ul li {
+  list-style: none;
+}
+.nav ul li a {
+  text-decoration: none;
+  gap: 20px;
+  color:white;
+  font-family: monospace;
+  font-size: 18px;
+  padding:10px;
+  
+}
+ .card{
+  color: white;
+  background-image: url(./images/u2.webp);
+  background-size: cover;
+  padding: 10rem 0 0;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 500ms ease;
+  margin: 5%;
+}
+.card:hover{
+  transform: scale(1.08) ;
+}
+.card-content{
+  padding: 1.5em;
+  background: black;
+  transform: translateY(65%);
+  transition: transform 500ms ease;
+  transition-delay: 1000ms;
+}
+.card-content > *{
+  opacity: 0;
+  transition:opacity 500ms linear;
+}
+.card:hover .card-content > *{
+  opacity: 1;
+}
+.card:hover .card-content{
+  transform: translateY(0);
+  transition-delay: 1000ms;
+}
+.card-title{
+  position: relative;
+  max-width: max-content;
+}
+.card-title::after{
+  content: "";
+  position: absolute;
+  height: 5px;
+  left: 0;
+  bottom: 0;
+  width: 190px;
+  background: orange;
+  animation: animate 3s linear infinite;
+
+} 
+ @keyframes animate{
+  0%{
+    width: 100px;
+  }
+  50%{
+    width: 200px;
+  }
+  100%{
+    width: 100px;
+  }
+} 
+ .card-body{
+color: white;
+}
+.button{
+  cursor:pointer;
+  display: inline;
+  text-decoration: none;
+  background: orange;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 10px;
+
+}
+.button:hover,
+.button:focus{
+  color: black;
+  background: white;   
+}
+.card:hover.card-title::after{
+  transform: scaleX(1);
+}  
